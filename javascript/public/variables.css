@@ -25,6 +25,10 @@
 	rgba(255, 51, 63, 1);
 	--ffffff: 
 	rgba(255, 255, 255, 1);
+	--x0073cc: 
+	rgba(0, 116, 204, 1);
+	--x0095ee: 
+	rgb(0, 149, 238, 1);
 	
 	--font-size-xxs: 10px;
 	--font-size-xs: 12px;
@@ -34,6 +38,7 @@
 	--font-size-xl: 20px;
 	--font-size-xxl: 24px;
 	--font-size-28px: 28px;
+	--font-size-xxxl: 32px;
 	
 	--font-family-arial-bold: "Arial-Bold";
 	--font-family-arial-regular: "Arial-Regular";
