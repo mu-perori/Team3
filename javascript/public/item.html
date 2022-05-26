@@ -1,37 +1,132 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>探されている物詳細</title>
+	<link rel="stylesheet" href="../css/globals.css">
+	<link rel="stylesheet" href="../css/variables.css">
+	<link rel="stylesheet" href="../css/item.css">
 </head>
+
 <body>
-	<header></header>
+	<header>
+		<img class="mercari_logo_horizontal" src="../assets/mercari-logo-horizontal.png" />
+		<input class="search-box x16px" name="searchWords" id="searchWords" placeholder="なにをお探しですか？" type="text" />
+		<input class="search-box x16px" name="searchWant" id="searchWant" placeholder="探してます検索" type="text" />
+		<ul class="header-menu x14px">
+			<li class="header-menu-item first"><a href="#">お知らせ</a></li>
+			<li class="header-menu-item"><a href="#">やることリスト</a></li>
+			<li class="header-menu-item"><a href="#">アカウント</a></li>
+			<a href="#" id="sellButton" class="sell-btn x14px-bold">出品</a>
+		</ul>
+	</header>
 
 	<main>
-
-		<ul> <!-- イメージスライダー(必要なければ伝えてください) -->
-			<li><img src="" alt=""></li>
-			<li><img src="" alt=""></li>
-			<li><img src="" alt=""></li>
-			<li><img src="" alt=""></li>
-			<li><img src="" alt=""></li>
-			<li><img src="" alt=""></li>
+		<ul class="image-slider">
+			<li class="slider-item first"><img src="" alt=""></li>
+			<li class="slider-item"><img src="" alt=""></li>
+			<li class="slider-item"><img src="" alt=""></li>
+			<li class="slider-item"><img src="" alt=""></li>
+			<li class="slider-item"><img src="" alt=""></li>
+			<li class="slider-item"><img src="" alt=""></li>
+			<div class="chevron-down"><img class="chevron-down-image" src="../assets/chevron-down-solid.png" /></div>
 		</ul>
-	
-		<img id="itemImage" src="" alt=""> <!-- メイン画像 -->
-	
-		<h1 id="itemName">商品名</h1> <!-- 商品名 -->
-		<p>¥</p>
-		<h2 id="budget">1,000</h2> <!-- 予算 -->
-		
-		<p id="itemDescription"></p> <!-- 商品説明 -->
-	
-		<p id="category"></p> <!-- カテゴリ -->
-		<p id="itemStatus"></p> <!-- 商品の状態 -->
+
+		<div class="item-image"><img id="itemImage" src="" alt=""></div> <!-- メイン画像 -->
+
+		<div class="content">
+			<h1 class="x24px-bold" id="itemName">商品名</h1> <!-- 商品名 -->
+
+			<div class="price-heading">
+				<div class="price x28px-bold">
+					<p class="price-yen">¥</p>
+					<h2 id="budget" class="amount">1,000</h2> <!-- 予算 -->
+				</div>
+				<p class="price-detail x12px">(税込) 送料込み</p>
+			</div>
+
+			<div class="like-and-comment">
+				<div class="like">
+					<img class="icon" src="../assets/heart-regular.svg" />
+					<div class="like-number x12px">1</div>
+				</div>
+				<div class="comment">
+					<img class="icon" src="../assets/message-regular.svg" />
+					<div class="comment-text x12px">コメント</div>
+				</div>
+			</div>
+
+			<a id="sellCreate" href="#" class="sell-create x15px-bold">出品する</a>
+
+			<h3 class="section">商品の説明</h3>
+			<p id="itemDescription" class="description x15px"> <!-- 商品説明 -->
+				こういう黒い花柄のロング丈のワンピースが欲しいです。<br /><br />サイズはM希望です。ぜひ出品お願いします。
+			</p>
+			<p class="timeago x15px">1日前</p>
+
+			<div class="section">商品の情報</div>
+			<div class="detail-list">
+				<div class="category">
+					<p class="category-heading x15px-bold">カテゴリー</p>
+					<div class="category-container x14px">
+						<p id="category" class="x15px">レディース</p> <!-- カテゴリー -->
+						<img class="chevron-right-solid" src="../assets/chevron-right-solid.svg" />
+					</div>
+				</div>
+				<div class="status">
+					<p class="status-header x15px-bold">商品の状態</p> <!-- 商品の状態 -->
+					<p id="itemStatus" class="item-status x15px">目立った傷や汚れなし</p>
+				</div>
+			</div>
+		</div>
 	</main>
 
-	<footer></footer>
+	<footer>
+		<div class="footer-container">
+			<div class="footer-top">
+				<ul class="footer-menu first">
+					<li class="footer-heading">メルカリについて</li>
+					<li class="footer-menu-item first">会社概要（運営会社）</li>
+					<li class="footer-menu-item">採用情報</li>
+					<li class="footer-menu-item">プレスリリース</li>
+					<li class="footer-menu-item">公式ブログ</li>
+					<li class="footer-menu-item">プレスキット</li>
+					<li class="footer-menu-item">メルカリUS</li>
+				</ul>
+				<ul class="footer-menu">
+					<li class="footer-heading">ヘルプ&amp;ガイド</li>
+					<li class="footer-menu-item first text-1">メルカリガイド</li>
+					<li class="footer-menu-item">らくらくメルカリ便</li>
+					<li class="footer-menu-item">ゆうゆうメルカリ便</li>
+					<li class="footer-menu-item">梱包・発送たのメル便</li>
+					<li class="footer-menu-item">車体取引ガイド</li>
+					<li class="footer-menu-item">メルカリあんしん・あんぜん宣言！</li>
+					<li class="footer-menu-item">偽ブランド品撲滅への取り組み</li>
+					<li class="footer-menu-item">フリーワードからさがす</li>
+					<li class="footer-menu-item">お問い合わせ</li>
+				</ul>
+				<ul class="footer-menu">
+					<li class="footer-heading">プライバシーと利用規約</li>
+					<li class="footer-menu-item first text-1">プライバシーポリシー</li>
+					<li class="footer-menu-item">メルカリ利用規約</li>
+					<li class="footer-menu-item">コンプライアンスポリシー</li>
+					<li class="footer-menu-item">個人データの安全管理に係る基本方針</li>
+					<li class="footer-menu-item">特定商取引に関する表記</li>
+					<li class="footer-menu-item">資金決済法に基づく表示</li>
+					<li class="footer-menu-item">法令順守と犯罪抑止のために</li>
+				</ul>
+			</div>
+			<div class="footer-bottom">
+				<img class="icon-twitter" src="../assets/twitter-brands.svg" />
+				<img class="icon-facebook" src="../assets/facebook-brands.svg" />
+				<p class="copyright x12px">© Mercari, Inc.</p>
+			</div>
+		</div>
+	</footer>
+
 </body>
+
 </html>
