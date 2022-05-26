@@ -59,3 +59,13 @@ def notification():
 @app.post("/sell/create")
 def add_item():
     return
+
+# 探されているアイテムの詳細画面
+@app.get("/want/item")
+def view_item():
+    return
+
+# 登録完了画面
+@app.get("/finish")
+def view_finish():
+    return
