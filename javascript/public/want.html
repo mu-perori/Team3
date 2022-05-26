@@ -6,174 +6,302 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>探してますピックアップ</title>
-	<link rel="stylesheet" type="text/css" href="../css/want.css" />
-	<link rel="stylesheet" type="text/css" href="../css/variables.css" />
 	<link rel="stylesheet" type="text/css" href="../css/globals.css" />
+	<link rel="stylesheet" type="text/css" href="../css/variables.css" />
+	<link rel="stylesheet" type="text/css" href="../css/want.css" />
 </head>
 
-<body style="margin: 0; background: #ffffff">
-	<div class="header border-1px-e5e5e5">
-		<img class="mercari_logo_horizontal"
-			src="../assets/mercari-logo-horizontal.png" />
-		<input class="search-box x16px" name="なにをお探しですか" placeholder="なにをお探しですか？" type="text" />
-		<input class="search-box-1 x16px" name="探してます検索" placeholder="探してます検索" type="text" />
-		<div class="header-menu x14px">
-			<div class="text-83">お知らせ</div>
-			<div class="text-84">やることリスト</div>
-			<div class="text-85">アカウント</div>
-			<a href="#">
-				<div class="view-2">
-					<div class="text x14px-bold">出品</div>
-				</div>
-			</a>
-		</div>
-	</div>
+<body>
+
+	<header>
+		<img class="mercari_logo_horizontal" src="../assets/mercari-logo-horizontal.png" />
+		<input class="search-box x16px" name="searchWords" id="searchWords" placeholder="なにをお探しですか？" type="text" />
+		<input class="search-box x16px" name="searchWant" id="searchWant" placeholder="探してます検索" type="text" />
+		<ul class="header-menu x14px">
+			<li class="header-menu-item first"><a href="#">お知らせ</a></li>
+			<li class="header-menu-item"><a href="#">やることリスト</a></li>
+			<li class="header-menu-item"><a href="#">アカウント</a></li>
+			<a href="#" id="sellButton" class="sell-btn x14px-bold">出品</a>
+		</ul>
+	</header>
+
 	<div class="header-list x14px-bold border-1px-e5e5e5">
-		<div class="text-79">おすすめ</div>
-		<div class="text-80">マイリスト</div>
-		<div class="text-81">ピックアップ</div>
-		<div class="view-1">
-			<div class="text-82">探してます</div>
-		</div>
+		<p class="header-list-item first">おすすめ</p>
+		<p class="header-list-item">マイリスト</p>
+		<p class="header-list-item">ピックアップ</p>
+		<p class="active">探してます</p>
 	</div>
-	<div class="container-center-horizontal">
-		<div class="want screen">
-			<div class="overlap-group5">
-				<div class="main">
-					<div class="heading border-1px-e5e5e5" style="border-width: 0 0 1px 0;">
-						<div class="text-64 x20px-bold">おすすめの探してます一覧</div>
-						<a href="#">
-							<div class="view">
-								<div class="text x14px-bold">探してますに登録</div>
-							</div>
-						</a>
-					</div>
 
-					<div class="category-item border-1px-e5e5e5">
-						<div class="col">
-							<div class="flex-col">
-								<div class="text-1 arial-bold-mine-shaft-17px">夏を先取り！サンダル特集</div>
-							</div>
-							<div class="flex-col-1">
-								<div class="average-price">
-									<div class="text-4 x14px">平均価格</div>
-									<div class="price-1 x14px-bold">¥</div>
-									<div class="text-5 x14px-bold">10,000</div>
-								</div>
-							</div>
-						</div>
+	<main>
+		<div class="heading">
+			<h1 class="x20px-bold">おすすめの探してます一覧</h1>
+			<a id="moveWantInput" href="#" class="move-want-input x14px-bold">探してますに登録</a>
+		</div>
 
-						<div class="col align-top">
-							<div class="item first">
-								<a href="#">
-									<div class="overlap-group" style="background-image: url(../assets/heart-regular.svg);">
-										<div class="frame-9 x20px-bold">
-											<div class="price">¥</div>
-											<div class="text-2">9,500</div>
-										</div>
-									</div>
-									<div class="text-3 x14px">商品名</div>
-								</a>
-							</div>
-
-							<div class="item">
-								<a href="#">
-									<div class="overlap-group">
-										<div class="frame-9 x20px-bold">
-											<div class="price">¥</div>
-											<div class="text-2">9,500</div>
-										</div>
-									</div>
-									<div class="text-3 x14px">商品名</div>
-								</a>
-							</div>
-
-							<div class="item">
-								<a href="#">
-									<div class="overlap-group">
-										<div class="frame-9 x20px-bold">
-											<div class="price">¥</div>
-											<div class="text-2">9,500</div>
-										</div>
-									</div>
-									<div class="text-3 x14px">商品名</div>
-								</a>
-							</div>
-
-							<div class="item">
-								<a href="#">
-									<div class="overlap-group">
-										<div class="frame-9 x20px-bold">
-											<div class="price">¥</div>
-											<div class="text-2">9,500</div>
-										</div>
-									</div>
-									<div class="text-3 x14px">商品名</div>
-								</a>
-							</div>
-
-							<div class="item">
-								<a href="#">
-									<div class="overlap-group">
-										<div class="frame-9 x20px-bold">
-											<div class="price">¥</div>
-											<div class="text-2">9,500</div>
-										</div>
-									</div>
-									<div class="text-3 x14px">商品名</div>
-								</a>
-							</div>
-						</div>
-
-					</div>
+		<div class="category first">
+			<div class="col">
+				<h2 class="category-heading arial-bold-mine-shaft-17px">夏を先取り！サンダル特集</h2>
+				<div class="average-price">
+					<p class="x14px">平均価格</p>
+					<p class="price-yen x14px-bold">¥</p>
+					<p class="price-value x14px-bold">10,000</p>
 				</div>
 			</div>
-			<div class="footer">
-				<div class="footer-container">
-					<div class="footer-top">
-						<div class="footer-menu-1">
-							<div class="text-6 x15px-bold">メルカリについて</div>
-							<div class="text-7 x15px">会社概要（運営会社）</div>
-							<div class="text-2-1 x15px">採用情報</div>
-							<div class="text-3-1 x15px">プレスリリース</div>
-							<div class="text-4-1 x15px">公式ブログ</div>
-							<div class="text-5-1 x15px">プレスキット</div>
-							<div class="us x15px">メルカリUS</div>
+
+			<ul class="col">
+				<li class="item first">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
 						</div>
-						<div class="footer-menu">
-							<div class="text-6 x15px-bold">ヘルプ&amp;ガイド</div>
-							<div class="text-7 x15px">メルカリガイド</div>
-							<div class="text-15 x15px">らくらくメルカリ便</div>
-							<div class="text-16 x15px">ゆうゆうメルカリ便</div>
-							<div class="text-14 x15px">梱包・発送たのメル便</div>
-							<div class="text-13 x15px">車体取引ガイド</div>
-							<div class="text-12 x15px">メルカリあんしん・あんぜん宣言！</div>
-							<div class="text-8 x15px">偽ブランド品撲滅への取り組み</div>
-							<div class="text-11 x15px">フリーワードからさがす</div>
-							<div class="text-10 x15px">お問い合わせ</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+
+				<li class="item">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
 						</div>
-						<div class="footer-menu">
-							<div class="text-6 x15px-bold">プライバシーと利用規約</div>
-							<div class="text-7 x15px">プライバシーポリシー</div>
-							<div class="text-22 x15px">メルカリ利用規約</div>
-							<div class="text-21 x15px">コンプライアンスポリシー</div>
-							<div class="text-23 x15px">個人データの安全管理に係る基本方針</div>
-							<div class="text-24 x15px">特定商取引に関する表記</div>
-							<div class="text-20 x15px">資金決済法に基づく表示</div>
-							<div class="text-19 x15px">法令順守と犯罪抑止のために</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+
+				<li class="item">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
 						</div>
-					</div>
-					<div class="footer-bottom border-1px-e5e5e5">
-						<img class="icon-twitter"
-							src="../assets/twitter-brands.svg" />
-						<img class="icon-facebook"
-							src="../assets/facebook-brands.svg" />
-						<div class="copyright x12px">© Mercari, Inc.</div>
-					</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+
+				<li class="item">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
+						</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+
+				<li class="item">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
+						</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="category">
+			<div class="col">
+				<h2 class="category-heading arial-bold-mine-shaft-17px">夏を先取り！サンダル特集</h2>
+				<div class="average-price">
+					<p class="x14px">平均価格</p>
+					<p class="price-yen x14px-bold">¥</p>
+					<p class="price-value x14px-bold">10,000</p>
 				</div>
 			</div>
+
+			<ul class="col">
+				<li class="item first">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
+						</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+
+				<li class="item">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
+						</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+
+				<li class="item">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
+						</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+
+				<li class="item">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
+						</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+
+				<li class="item">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
+						</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+			</ul>
 		</div>
-	</div>
+
+		<div class="category">
+			<div class="col">
+				<h2 class="category-heading arial-bold-mine-shaft-17px">夏を先取り！サンダル特集</h2>
+				<div class="average-price">
+					<p class="x14px">平均価格</p>
+					<p class="price-yen x14px-bold">¥</p>
+					<p class="price-value x14px-bold">10,000</p>
+				</div>
+			</div>
+
+			<ul class="col">
+				<li class="item first">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
+						</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+
+				<li class="item">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
+						</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+
+				<li class="item">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
+						</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+
+				<li class="item">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
+						</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+
+				<li class="item">
+					<a href="#">
+						<div class="thumbnail">
+							<div class="price-label x20px-bold">
+								<span>¥</span>
+								<p class="price-value">9,500</p>
+							</div>
+						</div>
+						<p class="item-name x14px">商品名</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</main>
+
+	<footer>
+		<div class="footer-container">
+			<div class="footer-top">
+				<ul class="footer-menu first">
+					<li class="footer-heading">メルカリについて</li>
+					<li class="footer-menu-item first">会社概要（運営会社）</li>
+					<li class="footer-menu-item">採用情報</li>
+					<li class="footer-menu-item">プレスリリース</li>
+					<li class="footer-menu-item">公式ブログ</li>
+					<li class="footer-menu-item">プレスキット</li>
+					<li class="footer-menu-item">メルカリUS</li>
+				</ul>
+				<ul class="footer-menu">
+					<li class="footer-heading">ヘルプ&amp;ガイド</li>
+					<li class="footer-menu-item first">メルカリガイド</li>
+					<li class="footer-menu-item">らくらくメルカリ便</li>
+					<li class="footer-menu-item">ゆうゆうメルカリ便</li>
+					<li class="footer-menu-item">梱包・発送たのメル便</li>
+					<li class="footer-menu-item">車体取引ガイド</li>
+					<li class="footer-menu-item">メルカリあんしん・あんぜん宣言！</li>
+					<li class="footer-menu-item">偽ブランド品撲滅への取り組み</li>
+					<li class="footer-menu-item">フリーワードからさがす</li>
+					<li class="footer-menu-item">お問い合わせ</li>
+				</ul>
+				<ul class="footer-menu">
+					<li class="footer-heading">プライバシーと利用規約</li>
+					<li class="footer-menu-item first">プライバシーポリシー</li>
+					<li class="footer-menu-item">メルカリ利用規約</li>
+					<li class="footer-menu-item">コンプライアンスポリシー</li>
+					<li class="footer-menu-item">個人データの安全管理に係る基本方針</li>
+					<li class="footer-menu-item">特定商取引に関する表記</li>
+					<li class="footer-menu-item">資金決済法に基づく表示</li>
+					<li class="footer-menu-item">法令順守と犯罪抑止のために</li>
+				</ul>
+			</div>
+			<div class="footer-bottom">
+				<img class="icon-twitter" src="../assets/twitter-brands.svg" />
+				<img class="icon-facebook" src="../assets/facebook-brands.svg" />
+				<div class="copyright x12px">© Mercari, Inc.</div>
+			</div>
+		</div>
+	</footer>
+
 </body>
 
 </html>
