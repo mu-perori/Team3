@@ -5,7 +5,7 @@
 select {
 	-webkit-appearance: none;
 	appearance: none; /* デフォルトの矢印を無効 */
-	background-image: url(../../images/chevron-down-solid.png);
+	background-image: url(../assets/chevron-down-solid.png);
 	background-position: right 10px center;
 	background-repeat: no-repeat;
 	background-size: 20px 20px;
@@ -109,7 +109,7 @@ select::-ms-expand {
 	align-items: flex-start;
 	text-align: right;
 	background-color: var(--ffffff);
-	background-image: url(../../images/yen.png);
+	background-image: url(../assets/yen.png);
 	background-position: left 10px center;
 	background-repeat: no-repeat;
 	background-size: 12px 17px;
