@@ -9,6 +9,7 @@ import hashlib
 from fastapi import FastAPI, Form, HTTPException, UploadFile, File
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 
 app = FastAPI()
 logger = logging.getLogger("uvicorn")
@@ -23,49 +24,71 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+db_path = pathlib.Path(__file__).parent.resolve() / "db" / "team3.sqlite3"
+images_path = pathlib.Path(__file__).parent.resolve() / "images"
+
+
+con = sqlite3.connect(db_path, check_same_thread=False)
+cur = con.cursor()
+
+
+
 @app.get("/")
 def root():
+    con = sqlite3.connect(db_path, check_same_thread=False)
+    cur = con.cursor()
+
+
+    con.close()
     return {"message": "Hello, world!"}
 
 # 探してます商品の登録
-@app.post("/want")
+@app.post("/want/input")
 def add_want():
-
+    con = sqlite3.connect(db_path, check_same_thread=False)
+    cur = con.cursor()
+    
+    con.close()
     return
 
-# 品切れ商品をほしいものに登録
-@app.post("/item/soldout")
-def add_want_soldout():
-    return
+
 
 # 探してますコーナーのトップ画面
-@app.get("/want/pickup")
+@app.get("/want")
 def pickup():
-
-    return
-
-# 探してます商品の検索結果
-@app.get("/want/results")
-def search():
-    return
-
-# これ売りませんか通知
-@app.get("/notifications")
-def notification():
-
-    return
-
-# デモ出品入力
-@app.post("/sell/create")
-def add_item():
+    con = sqlite3.connect(db_path, check_same_thread=False)
+    cur = con.cursor()
+    
+    con.close()
     return
 
 # 探されているアイテムの詳細画面
 @app.get("/want/item")
 def view_item():
+    con = sqlite3.connect(db_path, check_same_thread=False)
+    cur = con.cursor()
+    
+    con.close()
     return
 
-# 登録完了画面
-@app.get("/finish")
-def view_finish():
+
+# 探してます商品の検索結果
+@app.get("/want/results")
+def search():
+    con = sqlite3.connect(db_path, check_same_thread=False)
+    cur = con.cursor()
+    
+    con.close()
     return
+
+# # これ売りませんか通知
+# @app.get("/notifications")
+# def notification():
+
+#     return
+
+# # デモ出品入力
+# @app.post("/sell/create")
+# def add_item():
+#     return
+
