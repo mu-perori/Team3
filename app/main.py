@@ -83,7 +83,7 @@ def pickup():
     con.close()
     return json.dumps(tmp_dict)
 
-
+@app.get("/want/results")
 def search(want: Want_keyword):
     con = sqlite3.connect(db_path, check_same_thread=False)
     cur = con.cursor()
