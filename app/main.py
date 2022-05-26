@@ -28,11 +28,6 @@ db_path = pathlib.Path(__file__).parent.resolve() / "db" / "team3.sqlite3"
 images_path = pathlib.Path(__file__).parent.resolve() / "images"
 
 
-con = sqlite3.connect(db_path, check_same_thread=False)
-cur = con.cursor()
-
-
-
 @app.get("/")
 def root():
     con = sqlite3.connect(db_path, check_same_thread=False)
