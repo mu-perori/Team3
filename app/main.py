@@ -5,9 +5,10 @@ import os
 import logging
 import pathlib
 import sqlite3
+import json
 import hashlib
 from fastapi import FastAPI, Form, HTTPException, UploadFile, File
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse, ORJSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
@@ -30,11 +31,6 @@ images_path = pathlib.Path(__file__).parent.resolve() / "images"
 
 @app.get("/")
 def root():
-    con = sqlite3.connect(db_path, check_same_thread=False)
-    cur = con.cursor()
-
-
-    con.close()
     return {"message": "Hello, world!"}
 
 # 探してます商品の登録
@@ -47,34 +43,56 @@ def add_want():
     return
 
 
-
 # 探してますコーナーのトップ画面
 @app.get("/want")
 def pickup():
     con = sqlite3.connect(db_path, check_same_thread=False)
     cur = con.cursor()
+# カテゴリは今回は４のみの用意
+
+    tmp_dict = dict()
+
+    for i in range(4):
+        cid = "category{}".format(i+1)
+        tmp_dict[cid] = {"category":,
+                        "avg_budget":,
+                        "items":[
+                            {"item_name":,"item_price":,"item_image": },
+                            {"item_name":,"item_price":,"item_image": },
+                            {"item_name":,"item_price":,"item_image": },
+                            {"item_name":,"item_price":,"item_image": },
+                            {"item_name":,"item_price":,"item_image": },
+                        ]}
     
     con.close()
-    return
-
-# 探されているアイテムの詳細画面
-@app.get("/want/item")
-def view_item():
-    con = sqlite3.connect(db_path, check_same_thread=False)
-    cur = con.cursor()
-    
-    con.close()
-    return
+    return json.dumps(tmp_dict)
 
 
-# 探してます商品の検索結果
+# 探してます商品の検索&検索結果
 @app.get("/want/results")
 def search():
     con = sqlite3.connect(db_path, check_same_thread=False)
     cur = con.cursor()
+
+    tmp_set = set()
+
+    for _ in range(20):
+        tmp_set.add(json.dumps({"item_name":,"item_price":,"item_image": }))
+
     
     con.close()
-    return
+    return json.dumps(tmp_set)
+
+# 探されているアイテムの詳細画面 
+@app.get("/want/item")
+def view_item():
+    con = sqlite3.connect(db_path, check_same_thread=False)
+    cur = con.cursor()
+
+    
+    con.close()
+    return 
+
 
 # # これ売りませんか通知
 # @app.get("/notifications")
