@@ -15,6 +15,7 @@
 	<header>
 		<img class="mercari_logo_horizontal" src="../assets/mercari-logo-horizontal.png" />
 	</header>
+
 	<main>
 		<h1 class="heading x24px-bold">探してます商品の登録</h1>
 
@@ -22,7 +23,7 @@
 			<h2 class="section">商品の詳細</h2>
 
 			<h3 class="label">カテゴリー</h3>
-			<select id="selectCategory" name="selectCategory"  class="select-category border-1px-e4e4e4">
+			<select id="selectCategory" name="selectCategory" class="select-category border-1px-e4e4e4">
 				<option hidden>選択してください</option>
 				<option value="レディース">レディース</option>
 				<option value="メンズ">メンズ</option>
@@ -65,7 +66,8 @@
 					<h3 class="label">商品の説明</h3>
 					<p class="optional x10px">任意</p>
 				</div>
-				<textarea id="inputDescription" name="inputDescription" class="input-description border-1px-e4e4e4 x16px" placeholder="色、素材、重さ、定価、注意点など
+				<textarea id="inputDescription" name="inputDescription"
+					class="input-description border-1px-e4e4e4 x16px" placeholder="色、素材、重さ、定価、注意点など
 
 例) 黒い花柄のロング丈ワンピースが欲しいです。
 
@@ -80,22 +82,23 @@
 				<h3 class="label">予算</h3>
 				<p class="budget-range x14px">(¥300〜9,999,999</p>
 			</div>
-			<input id="inputBudget" name="inputBudget" type="number" min="0" inputmode="numeric" placeholder="0" class="input-budget border-1px-e4e4e4 x20px-bold">
+			<input id="inputBudget" name="inputBudget" type="number" min="0" inputmode="numeric" placeholder="0"
+				class="input-budget border-1px-e4e4e4 x20px-bold">
 		</section>
 
 		<a href="#" id="submitButton" class="submit-btn x15px-bold">登録する</a>
 
 	</main>
 
-		<div class="footer">
-			<div class="footer-menu">
-				<div class="footer-menu-item first x14px">プライバシーポリシー</div>
-				<div class="footer-menu-item x14px">メルカリ利用規約</div>
-				<div class="footer-menu-item x14px">特定商取引に関する表記</div>
-			</div>
-			<div class="copyright x12px">© Mercari, Inc.</div>
+	<footer>
+		<div class="footer-menu">
+			<div class="footer-menu-item first x14px">プライバシーポリシー</div>
+			<div class="footer-menu-item x14px">メルカリ利用規約</div>
+			<div class="footer-menu-item x14px">特定商取引に関する表記</div>
 		</div>
-	</div>
+		<div class="copyright x12px">© Mercari, Inc.</div>
+	</footer>
+
 </body>
 
 </html>
