@@ -175,7 +175,17 @@ main {
 	display: flex;
 	height: 200px;
 	min-width: 200px;
-	padding: 8px 0;
+	position: relative;
+}
+
+.thumbnail-image {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: auto;
+	height: 100%;
+	overflow: hidden;
 }
 
 .price-label {
@@ -187,6 +197,7 @@ main {
 	padding-right: 12px;
 	color: var(--ffffff);
 	font-weight: 700;
+	margin-bottom: 8px;
 }
 
 .item-name {
