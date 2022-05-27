@@ -14,7 +14,7 @@
 <body>
 	<header>
 		<img class="mercari_logo_horizontal" src="../assets/mercari-logo-horizontal.png" />
-		<input class="search-box x16px" name="searchWords" id="searchWords" placeholder="なにをお探しですか？" type="text" />
+		<input class="search-box x16px" placeholder="なにをお探しですか？" type="text" />
 		<input class="search-box x16px" name="searchWant" id="searchWant" placeholder="探してます検索" type="text" />
 		<ul class="header-menu x14px">
 			<li class="header-menu-item first"><a href="#">お知らせ</a></li>
@@ -26,16 +26,10 @@
 
 	<main>
 		<ul class="image-slider">
-			<li class="slider-item first"><img src="" alt=""></li>
-			<li class="slider-item"><img src="" alt=""></li>
-			<li class="slider-item"><img src="" alt=""></li>
-			<li class="slider-item"><img src="" alt=""></li>
-			<li class="slider-item"><img src="" alt=""></li>
-			<li class="slider-item"><img src="" alt=""></li>
-			<div class="chevron-down"><img class="chevron-down-image" src="../assets/chevron-down-solid.png" /></div>
+			<li class="slider-item"><img id="sliderThumbnail" src=""></li> <!-- メイン画像と同じ画像（スライダー用） -->
 		</ul>
 
-		<div class="item-image"><img id="itemImage" src="" alt=""></div> <!-- メイン画像 -->
+		<div class="item-image"><img id="itemImage" src=""></div> <!-- メイン画像 -->
 
 		<div class="content">
 			<h1 class="x24px-bold" id="itemName">商品名</h1> <!-- 商品名 -->
