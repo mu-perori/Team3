@@ -7,6 +7,7 @@ import pathlib
 import sqlite3
 import json
 import hashlib
+from unicodedata import category
 from fastapi import FastAPI, Form, HTTPException, UploadFile, File
 from fastapi.responses import FileResponse, JSONResponse, ORJSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -64,21 +65,27 @@ def add_want(want_input: Want_input):
 def pickup():
     con = sqlite3.connect(db_path, check_same_thread=False)
     cur = con.cursor()
-# カテゴリは今回は４のみの用意
-
+    # カテゴリは今回は４のみの用意
+    categories = ["カメラ","本","服","文房具"]
     tmp_dict = dict()
 
     for i in range(4):
         cid = "category{}".format(i+1)
-        tmp_dict[cid] = {"category":,
-                        "avg_budget":,
-                        "items":[
-                            {"item_name":,"item_price":,"item_image": },
-                            {"item_name":,"item_price":,"item_image": },
-                            {"item_name":,"item_price":,"item_image": },
-                            {"item_name":,"item_price":,"item_image": },
-                            {"item_name":,"item_price":,"item_image": },
-                        ]}
+
+        cname = categories[i]
+        items_list = cur.execute("select item_id,item_name,item_price from wants where category = :c limit 5",{"c":cname}).fetchall()
+        for j in range(5):
+            item_id,item_name,item_price = *items_list[j]
+
+            item_image_name = cur.execute("select item_image_name from items where item_id = :id",{"id":item_id}).fetchone()
+
+            items_list[j] = {"item_id":item_id ,"item_name":item_name,"item_price":item_price,"item_image_name":item_image_name}
+
+        avg_bud = int(cur.execute("select avg(item_price) from wants where category = :c",{"c":cname}).fetchone())
+
+        tmp_dict[cid] = {"category":cname,
+                        "avg_budget":avg_bud,
+                        "items":items_list}
     
     con.close()
     return json.dumps(tmp_dict)
@@ -87,13 +94,16 @@ def pickup():
 def search(want: Want_keyword):
     con = sqlite3.connect(db_path, check_same_thread=False)
     cur = con.cursor()
-
     tmp_set = set()
+    keyword = want.keyword
+    items_list = cur.execute("select item_id,item_name,item_price from wants where category = ?  or item_name glob '*?*' limit 20",(keyword,keyword)).fetchall()
 
-    for _ in range(20):
-        tmp_set.add(json.dumps({"item_name":,"item_price":,"item_image": }))
+    for item in items_list:
+        item_id,item_name,item_price = *item
+        item_image_name = cur.execute("select item_image_name from items where item_id = :id",{"id":item_id}).fetchone()
 
-    
+        tmp_set.add(json.dumps( {"item_id":item_id ,"item_name":item_name,"item_price":item_price,"item_image_name":item_image_name}))
+
     con.close()
     return json.dumps(tmp_set)
   
