@@ -35,7 +35,7 @@ const first = (index: number) => {
 };
 
 const linkTo = (itemId: number) => {
-  return { pathname: "/want/item", search: String(itemId) }
+  return { pathname: "/want/item", search: "want_id=" + String(itemId) }
 }
 
 // 探してますトップページ
