@@ -49,7 +49,6 @@
 	border-style: solid;
 	border-color: var(--e4e4e4);
 }
-
 .x10px {
 	font-family: var(--font-family-arial-regular);
 	font-size: var(--font-size-xxs);
@@ -57,7 +56,6 @@
 	font-weight: 400;
 	font-style: normal;
 }
-
 .x15px-bold {
 	font-family: var(--font-family-arial-bold);
 	font-size: var(--font-size-m);
@@ -65,7 +63,6 @@
 	font-weight: 700;
 	font-style: normal;
 }
-
 .x14px-bold {
 	font-family: var(--font-family-arial-bold);
 	font-size: var(--font-size-s);
@@ -73,7 +70,6 @@
 	font-weight: 700;
 	font-style: normal;
 }
-
 .x20px-bold {
 	font-family: var(--font-family-arial-bold);
 	font-size: var(--font-size-xl);
@@ -81,7 +77,6 @@
 	font-weight: 700;
 	font-style: normal;
 }
-
 .x15px {
 	font-family: var(--font-family-arial-regular);
 	font-size: var(--font-size-m);
@@ -89,13 +84,11 @@
 	font-weight: 400;
 	font-style: normal;
 }
-
 .border-1px-e5e5e5 {
 	border-width: 1px;
 	border-style: solid;
 	border-color: var(--e5e5e5);
 }
-
 .x14px {
 	font-family: var(--font-family-arial-regular);
 	font-size: var(--font-size-s);
@@ -103,7 +96,6 @@
 	font-weight: 400;
 	font-style: normal;
 }
-
 .x28px-bold {
 	font-family: var(--font-family-arial-bold);
 	font-size: var(--font-size-28px);
@@ -111,7 +103,6 @@
 	font-weight: 700;
 	font-style: normal;
 }
-
 .x16px {
 	font-family: var(--font-family-arial-regular);
 	font-size: var(--font-size-l);
@@ -119,7 +110,6 @@
 	font-weight: 400;
 	font-style: normal;
 }
-
 .x24px-bold {
 	font-family: var(--font-family-arial-bold);
 	font-size: var(--font-size-xxl);
@@ -127,27 +117,10 @@
 	font-weight: 700;
 	font-style: normal;
 }
-
 .x12px {
 	font-family: var(--font-family-arial-regular);
 	font-size: var(--font-size-xs);
 	letter-spacing: 0px;
 	font-weight: 400;
-	font-style: normal;
-}
-
-.x12px-bold {
-	font-family: var(--font-family-arial-bold);
-	font-size: var(--font-size-xs);
-	letter-spacing: 0px;
-	font-weight: 700;
-	font-style: normal;
-}
-
-.x17px-bold {
-	font-family: var(--font-family-arial-bold);
-	font-size: 17px;
-	letter-spacing: 0px;
-	font-weight: 700;
 	font-style: normal;
 }

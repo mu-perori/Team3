@@ -1,4 +1,4 @@
-main {
+#soldout .soldout-main {
 	background-color: var(--ffffff);
 	width: 100%;
 	max-width: 1280px;
@@ -8,26 +8,26 @@ main {
 	display: flex;
 }
 
-.image-slider {
+#soldout .image-slider {
 	padding: 14px 0;
 	position: relative;
 	width: 77px;
 }
 
-.slider-item {
+#soldout .slider-item {
 	background-color: var(--alto);
 	height: 77px;
 	width: 77px;
 	margin-top: 28px;
 }
 
-.slider-item img {
+#soldout .slider-item img {
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
 }
 
-.item-image {
+#soldout .item-image {
 	background-color: var(--alto);
 	height: 592px;
 	margin-left: 24px;
@@ -36,7 +36,7 @@ main {
 	z-index: 0;
 }
 
-.soldout-triangle {
+#soldout .soldout-triangle {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -47,14 +47,14 @@ main {
 	z-index: 1;
 }
 
-#itemImage {
+#soldout #itemImage {
 	z-index: -1;
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
 }
 
-.sold {
+#soldout .sold {
 	text-align: center;
 	position: relative;
 	width: 160px;
@@ -69,38 +69,38 @@ main {
 }
 
 
-.content {
+#soldout .soldout-content {
 	margin-left: 40px;
 }
 
-.price-heading {
+#soldout .price-heading {
 	align-items: center;
 	display: flex;
 	margin-top: 14px;
 }
 
-.price {
+#soldout .price {
 	align-items: flex-start;
 	display: flex;
 }
 
-.price-yen,
-.amount {
+#soldout .price-yen,
+#soldout .amount {
 	color: var(--ff333f);
 	font-weight: 700;
 }
 
-.price-detail {
+#soldout .price-detail {
 	margin-left: 8px;
 }
 
-.like-and-comment {
+#soldout .like-and-comment {
 	align-items: flex-start;
 	display: flex;
 	margin-top: 16px;
 }
 
-.like {
+#soldout .like {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
@@ -108,7 +108,7 @@ main {
 	width: 64px;
 }
 
-.comment {
+#soldout .comment {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
@@ -118,17 +118,17 @@ main {
 	width: 64px;
 }
 
-.like-number,
-.comment-text {
+#soldout .like-number,
+#soldout .comment-text {
 	margin-top: 2px;
 }
 
-.icon {
+#soldout .icon {
 	height: 32px;
 	width: 32px;
 }
 
-.soldout-btn {
+#soldout .soldout-btn {
 	background-color: var(--cccccc);
 	border-radius: 4px;
 	margin-top: 16px;
@@ -137,7 +137,7 @@ main {
 	color: var(--x666666);
 }
 
-.move-want-input {
+#soldout .move-want-input-btn {
 	display: block;
 	background-color: var(--ff333f);
 	border-radius: 4px;
@@ -148,7 +148,7 @@ main {
 	color: var(--ffffff);
 }
 
-.section {
+#soldout .soldout-heading {
 	color: var(--x666666);
 	margin-top: 32px;
 	margin-bottom: 16px;
@@ -158,72 +158,61 @@ main {
 	font-weight: 700;
 }
 
-#itemDescription {
+#soldout .soldout-description {
 	max-width: 473px;
 }
 
-.timeago {
+#soldout .timeago {
 	color: var(--x666666);
 	margin-top: 16px;
 }
 
-.text-14 {
-	color: var(--x666666);
-	font-weight: 700;
-	margin-top: -1px;
-	min-height: 23px;
-}
-
-.detail-list {
+#soldout .detail-list {
 	border-color: #e5e5e5;
 	border-style: solid;
 	border-width: 1px 0px;
 	padding: 16px 0px;
 }
 
-.detail-list-item {
+#soldout .detail-list-item {
 	align-items: center;
 	display: flex;
 	padding: 8px 0px;
 }
 
-.heading {
+#soldout .detail-list-heading {
 	color: var(--x333333);
 }
 
-.category-container {
+#soldout .category-container {
 	align-items: flex-start;
 	display: flex;
 	margin-left: 98px;
-	width: 128px;
+	white-space: nowrap;
 }
 
-.chevron-right-solid {
+#soldout .chevron-right-solid {
 	align-self: center;
 	height: 16px;
 	width: 16px;
 }
 
-.item-status {
+#soldout .item-status {
 	margin-left: 98px;
 }
 
-.item-status {
-	margin-left: 98px;
-}
-
-.item-fee {
+#soldout .item-fee {
 	margin-left: 82px;
 }
 
-.item-delivery {
+#soldout .item-delivery {
 	margin-left: 98px;
 }
 
-.item-area {
+#soldout .item-area {
 	margin-left: 82px
 }
 
-.item-days {
+#soldout .item-days {
 	margin-left: 66px;
 }

@@ -1,4 +1,4 @@
-header {
+#finish .header {
 	align-items: flex-start;
 	background-color: var(--ffffff);
 	border-bottom: 1px solid var(--e5e5e5);
@@ -7,21 +7,21 @@ header {
 	padding: 8px 24px;
 }
 
-main {
+#finish .finish-main {
 	margin: 0 auto;
 	max-width: 492px;
 	padding: 40px 36px 64px 36px;
 }
 
-.finish-heading {
+#finish .finish-heading {
 	text-align: center;
 }
 
-.finish-text {
+#finish .finish-text {
 	margin-top: 32px;
 }
 
-.btn {
+#finish .btn {
 	border-radius: 4px;
 	cursor: pointer;
 	display: block;
@@ -31,17 +31,17 @@ main {
 	white-space: nowrap;
 }
 
-.continue-btn {
+#finish .continue-btn {
 	background-color: var(--ff333f);
 	padding: 12px 158px;
 }
 
-.return-btn {
+#finish .return-btn {
 	background-color: var(--x999999);
 	padding: 12px 142px;
 }
 
-footer {
+#finish .footer {
 	align-items: center;
 	background-color: var(--f5f5f5);
 	display: flex;
@@ -53,22 +53,22 @@ footer {
 	bottom: 0
 }
 
-.copyright {
+#finish .copyright {
 	color: var(--x333333);
 	margin-bottom: 2px;
 	margin-left: 32px;
 	min-width: 79px;
 }
 
-.footer-menu {
+#finish#finish .footer-menu {
 	display: flex;
 }
 
-.footer-menu-item {
+#finish .footer-menu-item {
 	color: var(--x333333);
 	margin-left: 24px;
 }
 
-.footer-menu-item.first {
+#finish .footer-menu-item.first {
 	margin-left: 0px;
 }

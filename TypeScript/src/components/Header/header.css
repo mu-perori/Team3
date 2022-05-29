@@ -8,7 +8,7 @@ header {
 	border-bottom: 1px solid #e5e5e5;
 }
 
-.search-box {
+header .search-box {
 	background-color: var(--f5f5f5);
 	border: 1px solid var(--cccccc);
 	border-radius: 4px;
@@ -16,21 +16,18 @@ header {
 	width: 100%;
 	max-width: 340px;
 	padding: 8px 16px;
-	background-image: url(../assets/magnifying-glass-solid.svg);
+	background-image: url(../../../public/assets/magnifying-glass-solid.svg);
 	background-position: right 10px center;
 	background-repeat: no-repeat;
 	background-size: 20px 20px;
-}
-
-.search-box::placeholder {
-	color: #757575;
-}
-
-#searchWant {
 	max-width: 420px;
 }
 
-.header-menu {
+header .search-box::placeholder {
+	color: #757575;
+}
+
+header .header-menu {
 	align-items: center;
 	display: flex;
 	margin-left: auto;
@@ -38,19 +35,19 @@ header {
 	min-width: 332px;
 }
 
-.header-menu-item {
+header .header-menu-item {
 	margin-left: 16px;
 }
 
-.header-menu-item.first {
+header .header-menu-item.first {
 	margin-left: 0px;
 }
 
-.header-menu-item a {
+header .header-menu-item a {
 	color: var(--black);
 }
 
-.sell-btn {
+header .sell-btn {
 	align-items: flex-start;
 	background-color: var(--ff333f);
 	border-radius: 4px;

@@ -7,12 +7,12 @@ footer {
 	width: 100%;
 }
 
-.footer-container {
+footer .footer-container {
 	height: 435px;
 	width: 100%;
 }
 
-.footer-top {
+footer .footer-top {
 	align-items: center;
 	display: flex;
 	height: 354px;
@@ -20,7 +20,7 @@ footer {
 	width: 100%;
 }
 
-.footer-menu {
+footer .footer-menu {
 	align-items: flex-start;
 	display: flex;
 	flex-direction: column;
@@ -29,28 +29,28 @@ footer {
 	width: 320px;
 }
 
-.footer-menu.first {
+footer .footer-menu.first {
 	margin-right: 0px;
 }
 
-.footer-heading {
+footer .footer-heading {
 	font-family: var(--font-family-arial-bold);
 	font-size: var(--font-size-m);
 	font-weight: 700;
 }
 
-.footer-menu-item {
+footer .footer-menu-item {
 	color: var(--x333333);
 	margin-top: 8px;
 	font-family: var(--font-family-arial-regular);
 	font-size: var(--font-size-m);
 }
 
-.footer-menu-item.first {
+footer .footer-menu-item.first {
 	margin-top: 16px;
 }
 
-.footer-bottom {
+footer .footer-bottom {
 	align-items: flex-start;
 	display: flex;
 	padding: 24px 36px;
@@ -58,18 +58,18 @@ footer {
 	border-top: 1px solid #e5e5e5;
 }
 
-.icon-twitter {
+footer .icon-twitter {
 	height: 32px;
 	width: 32px;
 }
 
-.icon-facebook {
+footer .icon-facebook {
 	height: 32px;
 	margin-left: 16px;
 	width: 32px;
 }
 
-.copyright {
+footer .copyright {
 	align-self: center;
 	color: var(--x333333);
 	margin-left: auto;
