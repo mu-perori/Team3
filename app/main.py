@@ -88,47 +88,44 @@ def pickup():
     cur = con.cursor()
     # カテゴリは今回は４のみの用意
     categories = ["カメラ", "本", "レディース", "スポーツ"]
-    tmp_dict = []
+    tmp_list = []
 
     for i in range(4):
-        cid = "category{}".format(i + 1)
-
         cname = categories[i]
         items_list = cur.execute(
-            "select item_id,item_name,budget from wants where category = :c limit 5",
+            "select item_id, wants_id, item_name,budget from wants where category = :c limit 5",
             {"c": cname},
         ).fetchall()
-        print(items_list)
+
+        tmp_list2 = []
+
         for j in range(len(items_list)):
-            item_id, item_name, budget = items_list[j]
+            item_id, wants_id ,item_name, budget = items_list[j]
 
             item_image_name = cur.execute(
                 "select item_image_name from items where item_id = :id", {"id": item_id}
             ).fetchone()[0]
 
-            items_list[j] = {
-                "item_id": item_id,
+            tmp_list2.append({
+                "wants_id": wants_id,
                 "item_name": item_name,
                 "budget": budget,
                 "item_image_name": item_image_name,
-            }
+            })
 
         avg_bud = cur.execute(
             "select avg(budget) from wants where category = :c", {"c": cname}
         ).fetchone()
-        print(avg_bud[0])
-        print(type(avg_bud[0]))
 
-        tmp_dict.append(
+        tmp_list.append(
             {
-                "category": cname,
-                "avg_budget": round(avg_bud[0]),
-                "items": items_list,
+                "category_info":{"category": cname,"avg_budget": round(avg_bud[0])},
+                "item_list": items_list2
             }
         )
 
     con.close()
-    return tmp_dict
+    return tmp_list
 
 
 @app.get("/want/results")
@@ -137,19 +134,19 @@ def search(keyword: str):
     cur = con.cursor()
     tmp_set = []
     items_list = cur.execute(
-        "select item_id,item_name,budget from wants where category = ?  or item_name = ? limit 20",
+        "select item_id, wants_id, item_name, budget from wants where category = ?  or item_name = ? limit 20",
         (keyword, keyword),
     ).fetchall()
 
     for item in items_list:
-        item_id, item_name, budget = item
+        item_id, wants_id, item_name, budget = item
         item_image_name = cur.execute(
             "select item_image_name from items where item_id = :id", {"id": item_id}
         ).fetchone()
 
         tmp_set.append(
             {
-                "item_id": item_id,
+                "wants_id": wants_id,
                 "item_name": item_name,
                 "budget": budget,
                 "item_image_name": item_image_name[0],
