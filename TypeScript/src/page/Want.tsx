@@ -7,6 +7,7 @@ import './want.css';
 
 const server = process.env.API_URL || 'http://127.0.0.1:9000';
 const placeholderImage = process.env.PUBLIC_URL + '/logo192.png';
+const image_path = '../images/'
 
 interface Prop {
   reload?: boolean;
@@ -105,7 +106,7 @@ export const Want: React.FC<Prop> = (props) => {
                         <li className={"item" + first(index)}>
                           <Link to={linkTo(item.wants_id)}>
                             <div className="thumbnail">
-                              <img className="thumbnail-image" src="" alt="" />
+                              <img className="thumbnail-image" src={image_path + item.item_image_name} alt="" />
                               <div className="price-label x20px-bold">
                                 <span>¥</span>
                                 <p className="price-value">{item.budget}</p>

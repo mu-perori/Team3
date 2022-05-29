@@ -7,6 +7,7 @@ import './results.css';
 
 const server = process.env.API_URL || 'http://127.0.0.1:9000';
 const placeholderImage = process.env.PUBLIC_URL + '/logo192.png';
+const image_path = '../images/'
 
 interface Prop {
   reload?: boolean;
@@ -100,7 +101,7 @@ export const WantResults: React.FC<Prop> = (props) => {
                     <div className={"item"}>
                       <Link to={linkTo(value.wants_id)}>
                         <div className="thumbnail">
-                          <img id="thumbnail12" className="thumbnail-image" src="" />
+                          <img id="thumbnail12" className="thumbnail-image" src={image_path + value.item_image_name} />
                           <div className="price-label x20px-bold">
                             <div className="price">¥</div>
                             <div id="valuePrice12" className="price-value">{value.budget}</div>
@@ -114,7 +115,7 @@ export const WantResults: React.FC<Prop> = (props) => {
                     <div className={"item"}>
                       <Link to={linkTo(value.wants_id)}>
                         <div className="thumbnail">
-                          <img id="thumbnail12" className="thumbnail-image" src="" />
+                          <img id="thumbnail12" className="thumbnail-image" src={image_path + value.item_image_name} />
                           <div className="price-label x20px-bold">
                             <div className="price">¥</div>
                             <div id="valuePrice12" className="price-value">{value.budget}</div>
@@ -128,7 +129,7 @@ export const WantResults: React.FC<Prop> = (props) => {
                     <div className={"item"}>
                       <Link to={linkTo(value.wants_id)}>
                         <div className="thumbnail">
-                          <img id="thumbnail12" className="thumbnail-image" src="" />
+                          <img id="thumbnail12" className="thumbnail-image" src={image_path + value.item_image_name} />
                           <div className="price-label x20px-bold">
                             <div className="price">¥</div>
                             <div id="valuePrice12" className="price-value">{value.budget}</div>
@@ -142,7 +143,7 @@ export const WantResults: React.FC<Prop> = (props) => {
                     <div className={"item"}>
                       <Link to={linkTo(value.wants_id)}>
                         <div className="thumbnail">
-                          <img id="thumbnail12" className="thumbnail-image" src="" />
+                          <img id="thumbnail12" className="thumbnail-image" src={image_path + value.item_image_name} />
                           <div className="price-label x20px-bold">
                             <div className="price">¥</div>
                             <div id="valuePrice12" className="price-value">{value.budget}</div>
