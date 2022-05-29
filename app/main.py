@@ -37,15 +37,11 @@ images_path = pathlib.Path(os.path.dirname(__file__)).parent.resolve() / "images
 #     keyword: str
 
 
-class Want_input(BaseModel):
+#class Want_input(BaseModel):
     # user_id: int
     # user_name: str
-    category: str
-    item_name: str
-    budget: int
-    item_status: int = Field(..., ge=0, le=5)
-    item_discription: str
-    item_id: int = None
+    # item_id: int = None
+    
 
 
 # class Want_item(BaseModel):
@@ -59,25 +55,28 @@ def root():
 
 # 探してます商品の登録
 @app.post("/want/input")
-def add_want(want_input: Want_input):
+def add_want():
+  pass
+"""
+def add_want(category: str = Form(...), item_name: str = Form(...), budget: int = Form(...), item_status: int = Form(...), item_discription: str = Form(...)):
     con = sqlite3.connect(db_path, check_same_thread=False)
     cur = con.cursor()
     # res = cur.execute("SELECT item_id FROM wants")
     cur.execute(
-        "INSERT INTO wants(category, item_name, budget, item_status, item_discription, item_id) VALUES(?, ?, ?, ?, ?, ?)",
+        "INSERT INTO wants(category, item_name, budget, item_status, item_discription) VALUES(?, ?, ?, ?, ?)",
         (
-            want_input.category,
-            want_input.item_name,
-            want_input.budget,
-            want_input.item_status,
-            want_input.item_discription,
-            want_input.item_id,
+            category,
+            item_name,
+            budget,
+            item_status,
+            item_discription,
+            # want_input.item_id,
         ),
     )
     con.commit()
     con.close()
     return {"message": "登録しました！"}
-
+"""
 
 # 探してますコーナーのトップ画面
 @app.get("/want")

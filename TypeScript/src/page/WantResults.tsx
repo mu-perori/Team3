@@ -23,7 +23,7 @@ type resultsType = {
 const insertTag = (index: number, min_i: number, max_i: number) => { return index >= min_i && index <= max_i }
 
 const linkTo = (itemId: number) => {
-  return { pathname: '/want/item', search: String(itemId) }
+  return { pathname: '/want/item', search: "want_id=" + String(itemId) }
 }
 
 const searchWords = (s: string) => {
@@ -34,9 +34,9 @@ const searchWords = (s: string) => {
 export const WantResults: React.FC<Prop> = (props) => {
   const { reload = true, onLoadCompleted } = props;
   const location = useLocation(); // 前のページから情報を受け取る
-  console.log(decodeURI(location.search))
   const [results, setResults] = useState<resultsType[]>([]);
   const fetchItems = () => {
+    console.log(decodeURI(location.search))
     fetch(server.concat('/want/results' + location.search),
       {
         method: 'GET',

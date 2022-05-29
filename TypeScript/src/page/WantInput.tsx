@@ -13,7 +13,7 @@ interface Prop {
 type formDataType = {
   category: string, // カテゴリ
   item_name: string, // 商品名
-  budget: number, // 予算
+  budget: string, // 予算
   item_status: number | null, // 商品の状態
   item_discription: string // 詳細
 }
@@ -21,7 +21,7 @@ type formDataType = {
 type locationDataType = {
   item_name: string, 
   category: string,
-  item_price: number,
+  item_price: string,
   item_id: string | null
 }
 
@@ -29,14 +29,13 @@ export const WantInput: React.FC<Prop> = (props) => {
   const { onListingCompleted } = props;
   const location = useLocation();
   const state = location.state as locationDataType
-  console.log(state)
   const selectedJudge = (selectValue: string, stateValue:string) => {
       return selectValue == stateValue
   }
   const initialState = {
-      category: state.category || '',
-      item_name: state.item_name || '',
-      budget: state.item_price || 0,
+      category: (state ? state.category : ''),
+      item_name: (state ? state.item_name : ''),
+      budget: (state ? state.item_price : '300'),
       item_status: null,
       item_discription: 'null'
   };
@@ -45,32 +44,17 @@ export const WantInput: React.FC<Prop> = (props) => {
       // return !(values.category && values.item_name && values.budget && values.item_status);
       return false
   };
-
-  const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
-  };
-
-  const onChangeSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
-  };
-
-  const onChangeDiscription = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  console.log(values)
+  const onChangeInput = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const data = new FormData()
-    data.append('category', values.category);
-    data.append('item_name', values.item_name);
-    data.append('budget', String(values.budget));
-    data.append('item_status', String(values.item_status));
-    data.append('item_discription', values.item_discription);
-    
     fetch(server.concat('/want/input'), {
       method: 'POST', // デフォルトはGET
       mode: 'cors', // デフォルトもcors
-      body: JSON.stringify(data),
+      body: JSON.stringify(values),
     })
       .then(response => {
           if (response.status == 200){
@@ -100,25 +84,25 @@ export const WantInput: React.FC<Prop> = (props) => {
           <section className="item-detail">
             <h2 className="input-section">商品の詳細</h2>
             <h3 className="label">カテゴリー</h3>
-            <select id="selectCategory" name="category"  className="select-category border-1px-e4e4e4" onChange={onChangeSelect} required>
-              <option hidden selected = {selectedJudge("", state.category)}>選択してください</option>
-              <option value="レディース" selected = {selectedJudge("レディース", state.category)}>レディース</option>
-              <option value="メンズ" selected = {selectedJudge("メンズ", state.category)}>メンズ</option>
-              <option value="ベビー・キッズ" selected = {selectedJudge("ベビー・キッズ", state.category)}>ベビー・キッズ</option>
-              <option value="インテリア・住まい・小物" selected = {selectedJudge("インテリア・住まい・小物", state.category)}>インテリア・住まい・小物</option>
-              <option value="本・音楽・ゲーム" selected = {selectedJudge("本・音楽・ゲーム", state.category)}>本・音楽・ゲーム</option>
-              <option value="おもちゃ・ホビー・グッズ" selected = {selectedJudge("おもちゃ・ホビー・グッズ", state.category)}>おもちゃ・ホビー・グッズ</option>
-              <option value="コスメ・香水・美容" selected = {selectedJudge("コスメ・香水・美容", state.category)}>コスメ・香水・美容</option>
-              <option value="家電・スマホ・カメラ" selected = {selectedJudge("家電・スマホ・カメラ", state.category)}>家電・スマホ・カメラ</option>
-              <option value="スポーツ・レジャー" selected = {selectedJudge("スポーツ・レジャー", state.category)}>スポーツ・レジャー</option>
-              <option value="ハンドメイド" selected = {selectedJudge("ハンドメイド", state.category)}>ハンドメイド</option>
-              <option value="チケット" selected = {selectedJudge("チケット", state.category)}>チケット</option>
-              <option value="自動車・オートバイ" selected = {selectedJudge("自動車・オートバイ", state.category)}>自動車・オートバイ</option>
-              <option value="その他" selected = {selectedJudge("その他", state.category)}>その他</option>
+            <select id="selectCategory" name="category"  className="select-category border-1px-e4e4e4" onChange={onChangeInput} required>
+              <option hidden selected = {selectedJudge("", initialState.category)}>選択してください</option>
+              <option value="レディース" selected = {selectedJudge("レディース", initialState.category)}>レディース</option>
+              <option value="メンズ" selected = {selectedJudge("メンズ", initialState.category)}>メンズ</option>
+              <option value="ベビー・キッズ" selected = {selectedJudge("ベビー・キッズ", initialState.category)}>ベビー・キッズ</option>
+              <option value="インテリア・住まい・小物" selected = {selectedJudge("インテリア・住まい・小物", initialState.category)}>インテリア・住まい・小物</option>
+              <option value="本・音楽・ゲーム" selected = {selectedJudge("本・音楽・ゲーム", initialState.category)}>本・音楽・ゲーム</option>
+              <option value="おもちゃ・ホビー・グッズ" selected = {selectedJudge("おもちゃ・ホビー・グッズ", initialState.category)}>おもちゃ・ホビー・グッズ</option>
+              <option value="コスメ・香水・美容" selected = {selectedJudge("コスメ・香水・美容", initialState.category)}>コスメ・香水・美容</option>
+              <option value="家電・スマホ・カメラ" selected = {selectedJudge("家電・スマホ・カメラ", initialState.category)}>家電・スマホ・カメラ</option>
+              <option value="スポーツ・レジャー" selected = {selectedJudge("スポーツ・レジャー", initialState.category)}>スポーツ・レジャー</option>
+              <option value="ハンドメイド" selected = {selectedJudge("ハンドメイド", initialState.category)}>ハンドメイド</option>
+              <option value="チケット" selected = {selectedJudge("チケット", initialState.category)}>チケット</option>
+              <option value="自動車・オートバイ" selected = {selectedJudge("自動車・オートバイ", initialState.category)}>自動車・オートバイ</option>
+              <option value="その他" selected = {selectedJudge("その他", initialState.category)}>その他</option>
             </select>
         
             <h3 className="label">商品の状態</h3>
-            <select name="item_status" id="selectStatus" className="select-status border-1px-e4e4e4" onChange={onChangeSelect} required>
+            <select name="item_status" id="selectStatus" className="select-status border-1px-e4e4e4" onChange={onChangeInput} required>
               <option hidden>選択してください</option>
               <option value="0">新品、未使用</option>
               <option value="1">未使用に近い</option>
@@ -147,7 +131,7 @@ export const WantInput: React.FC<Prop> = (props) => {
               
               例) 黒い花柄のロング丈ワンピースが欲しいです。
               
-              #ワンピース #黒ワンピ #ロング丈" onChange={onChangeDiscription}></textarea>
+              #ワンピース #黒ワンピ #ロング丈" onChange={onChangeInput}></textarea>
               <p className="description-count x10px">{[... values.item_discription].length} / 1000</p>
             </div>
           </section>
