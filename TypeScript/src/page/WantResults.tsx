@@ -14,16 +14,16 @@ interface Prop {
 }
 
 type resultsType = {
-  wants_id:number,
+  wants_id: number,
   item_image_name: string,
   item_name: string,
   budget: number
 }
 
-const insertTag = (index: number, min_i:number, max_i: number) => {return index >= min_i && index <= max_i}
+const insertTag = (index: number, min_i: number, max_i: number) => { return index >= min_i && index <= max_i }
 
 const linkTo = (itemId: number) => {
-  return{pathname: '/want/item', search: String(itemId)}
+  return { pathname: '/want/item', search: String(itemId) }
 }
 
 const searchWords = (s: string) => {
@@ -37,7 +37,7 @@ export const WantResults: React.FC<Prop> = (props) => {
   console.log(decodeURI(location.search))
   const [results, setResults] = useState<resultsType[]>([]);
   const fetchItems = () => {
-    fetch(server.concat('/want/results'+location.search),
+    fetch(server.concat('/want/results' + location.search),
       {
         method: 'GET',
         mode: 'cors',
@@ -59,33 +59,31 @@ export const WantResults: React.FC<Prop> = (props) => {
   }
 
   useEffect(() => {
-    if (reload) {
-      fetchItems();
-    }
+    fetchItems();
   }, [reload]);
   return (
     <div id="results">
-    <Header />
-    <main>
-      <div className="filter">
-        <h2 className="filter-heading x17px-bold">絞り込み<span className="filter-clear x14px">クリア</span></h2>
-        <ul className="filter-container x14px-bold">
-          <li className="filter-item first">
-            <h3 className="filter-item-heading">カテゴリー</h3>
-            <img className="chevron-down" src="../assets/chevron-down-solid.png" />
-          </li>
-          <li className="filter-item">
-            <h3 className="filter-item-heading">商品の状態</h3>
-            <img className="chevron-down" src="../assets/chevron-down-solid.png" />
-          </li>
-          <li className="filter-item">
-            <h3 className="filter-item-heading">予算</h3>
-            <img className="chevron-down last" src="../assets/chevron-down-solid.png" />
-          </li>
-        </ul>
-      </div>
-  
-      <div className="content">
+      <Header />
+      <main>
+        <div className="filter">
+          <h2 className="filter-heading x17px-bold">絞り込み<span className="filter-clear x14px">クリア</span></h2>
+          <ul className="filter-container x14px-bold">
+            <li className="filter-item first">
+              <h3 className="filter-item-heading">カテゴリー</h3>
+              <img className="chevron-down" src="../assets/chevron-down-solid.png" />
+            </li>
+            <li className="filter-item">
+              <h3 className="filter-item-heading">商品の状態</h3>
+              <img className="chevron-down" src="../assets/chevron-down-solid.png" />
+            </li>
+            <li className="filter-item">
+              <h3 className="filter-item-heading">予算</h3>
+              <img className="chevron-down last" src="../assets/chevron-down-solid.png" />
+            </li>
+          </ul>
+        </div>
+
+        <div className="content">
           <h1 className="results-heading x24px-bold">{searchWords(decodeURI(location.search))}の検索結果</h1>
           <div className="col">
             <p className="quantity x12px">999+件</p>
@@ -94,74 +92,74 @@ export const WantResults: React.FC<Prop> = (props) => {
               <p className="save-filter x12px-bold">この検索条件を保存する</p>
             </div>
           </div>
-        <div className="results-container">
-        {results && results.map((value: resultsType, index) => {
-          return (
-          <div key={value.item_name}>
-          {insertTag(index, 0, 4)&&(
-        <div className={"item"}>
-          <Link to={linkTo(value.wants_id)}>
-            <div className="thumbnail">
-              <img id="thumbnail12" className="thumbnail-image" src="" />
-              <div className="price-label x20px-bold">
-                <div className="price">¥</div>
-                <div id="valuePrice12" className="price-value">{value.budget}</div>
-              </div>
-            </div>
-            <p className="item-name x14px">{value.item_name}</p>
-          </Link>
-        </div>
-          )}
-          {insertTag(index, 5, 9)&&(
-        <div className={"item"}>
-          <Link to={linkTo(value.wants_id)}>
-            <div className="thumbnail">
-              <img id="thumbnail12" className="thumbnail-image" src="" />
-              <div className="price-label x20px-bold">
-                <div className="price">¥</div>
-                <div id="valuePrice12" className="price-value">{value.budget}</div>
-              </div>
-            </div>
-            <p className="item-name x14px">{value.item_name}</p>
-          </Link>
-        </div>
-          )}
-          {insertTag(index, 10, 14)&&(
-        <div className={"item"}>
-          <Link to={linkTo(value.wants_id)}>
-            <div className="thumbnail">
-              <img id="thumbnail12" className="thumbnail-image" src="" />
-              <div className="price-label x20px-bold">
-                <div className="price">¥</div>
-                <div id="valuePrice12" className="price-value">{value.budget}</div>
-              </div>
-            </div>
-            <p className="item-name x14px">{value.item_name}</p>
-          </Link>
-        </div>
-          )}
-          {insertTag(index, 15, 19)&&(
-        <div className={"item"}>
-          <Link to={linkTo(value.wants_id)}>
-            <div className="thumbnail">
-              <img id="thumbnail12" className="thumbnail-image" src="" />
-              <div className="price-label x20px-bold">
-                <div className="price">¥</div>
-                <div id="valuePrice12" className="price-value">{value.budget}</div>
-              </div>
-            </div>
-            <p className="item-name x14px">{value.item_name}</p>
-          </Link>
-        </div>
-          )}
+          <div className="results-container">
+            {results && results.map((value: resultsType, index) => {
+              return (
+                <div key={value.wants_id}>
+                  {insertTag(index, 0, 4) && (
+                    <div className={"item"}>
+                      <Link to={linkTo(value.wants_id)}>
+                        <div className="thumbnail">
+                          <img id="thumbnail12" className="thumbnail-image" src="" />
+                          <div className="price-label x20px-bold">
+                            <div className="price">¥</div>
+                            <div id="valuePrice12" className="price-value">{value.budget}</div>
+                          </div>
+                        </div>
+                        <p className="item-name x14px">{value.item_name}</p>
+                      </Link>
+                    </div>
+                  )}
+                  {insertTag(index, 5, 9) && (
+                    <div className={"item"}>
+                      <Link to={linkTo(value.wants_id)}>
+                        <div className="thumbnail">
+                          <img id="thumbnail12" className="thumbnail-image" src="" />
+                          <div className="price-label x20px-bold">
+                            <div className="price">¥</div>
+                            <div id="valuePrice12" className="price-value">{value.budget}</div>
+                          </div>
+                        </div>
+                        <p className="item-name x14px">{value.item_name}</p>
+                      </Link>
+                    </div>
+                  )}
+                  {insertTag(index, 10, 14) && (
+                    <div className={"item"}>
+                      <Link to={linkTo(value.wants_id)}>
+                        <div className="thumbnail">
+                          <img id="thumbnail12" className="thumbnail-image" src="" />
+                          <div className="price-label x20px-bold">
+                            <div className="price">¥</div>
+                            <div id="valuePrice12" className="price-value">{value.budget}</div>
+                          </div>
+                        </div>
+                        <p className="item-name x14px">{value.item_name}</p>
+                      </Link>
+                    </div>
+                  )}
+                  {insertTag(index, 15, 19) && (
+                    <div className={"item"}>
+                      <Link to={linkTo(value.wants_id)}>
+                        <div className="thumbnail">
+                          <img id="thumbnail12" className="thumbnail-image" src="" />
+                          <div className="price-label x20px-bold">
+                            <div className="price">¥</div>
+                            <div id="valuePrice12" className="price-value">{value.budget}</div>
+                          </div>
+                        </div>
+                        <p className="item-name x14px">{value.item_name}</p>
+                      </Link>
+                    </div>
+                  )}
 
+                </div>
+              )
+            })}
           </div>
-          )
-        })}
         </div>
-      </div>
-    </main>
-    <Footer />
+      </main>
+      <Footer />
     </div>
   );
 };
