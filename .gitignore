@@ -1,13 +1,7 @@
-<<<<<<< HEAD
 .venv
 __pycache__
 poetry.lock
 pyproject.toml
-
-=======
 .DS_Store
 node_modules/
-__pycache__/
 *.pyc
-mercari.sqlite3
->>>>>>> 23d5a9059dfe7dd5f2439a3e18dbc6978ff3f1af

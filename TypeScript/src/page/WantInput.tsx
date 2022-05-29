@@ -42,7 +42,8 @@ export const WantInput: React.FC<Prop> = (props) => {
   };
   const [values, setValues] = useState<formDataType>(initialState);
   const isVaild = (values: formDataType): boolean => {
-      return !(values.category && values.item_name && values.budget && values.item_status);
+      // return !(values.category && values.item_name && values.budget && values.item_status);
+      return false
   };
 
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -65,11 +66,11 @@ export const WantInput: React.FC<Prop> = (props) => {
     data.append('budget', String(values.budget));
     data.append('item_status', String(values.item_status));
     data.append('item_discription', values.item_discription);
-
-    fetch(server.concat('/input'), {
+    
+    fetch(server.concat('/want/input'), {
       method: 'POST', // デフォルトはGET
       mode: 'cors', // デフォルトもcors
-      body: data,
+      body: JSON.stringify(data),
     })
       .then(response => {
           if (response.status == 200){
