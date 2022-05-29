@@ -98,18 +98,20 @@ def pickup():
         tmp_list2 = []
 
         for j in range(len(items_list)):
-            item_id, wants_id ,item_name, budget = items_list[j]
+            item_id, wants_id, item_name, budget = items_list[j]
 
             item_image_name = cur.execute(
                 "select item_image_name from items where item_id = :id", {"id": item_id}
             ).fetchone()[0]
 
-            tmp_list2.append({
-                "wants_id": wants_id,
-                "item_name": item_name,
-                "budget": budget,
-                "item_image_name": item_image_name,
-            })
+            tmp_list2.append(
+                {
+                    "wants_id": wants_id,
+                    "item_name": item_name,
+                    "budget": budget,
+                    "item_image_name": item_image_name,
+                }
+            )
 
         avg_bud = cur.execute(
             "select avg(budget) from wants where category = :c", {"c": cname}
@@ -117,8 +119,8 @@ def pickup():
 
         tmp_list.append(
             {
-                "category_info":{"category": cname,"avg_budget": round(avg_bud[0])},
-                "item_list": tmp_list2
+                "category_info": {"category": cname, "avg_budget": round(avg_bud[0])},
+                "item_list": tmp_list2,
             }
         )
 
@@ -200,10 +202,10 @@ def view_item(want_id: str):
 # def add_item():
 #     return
 
+
 def main():
     print(pickup())
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
-
-
