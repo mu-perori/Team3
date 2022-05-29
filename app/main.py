@@ -120,7 +120,7 @@ def pickup():
         tmp_list.append(
             {
                 "category_info":{"category": cname,"avg_budget": round(avg_bud[0])},
-                "item_list": items_list2
+                "item_list": tmp_list2
             }
         )
 
