@@ -1,0 +1,133 @@
+#want .active {
+	border-bottom: 3px solid var(--ff333f);
+	margin-left: 24px;
+	padding: 10px 24px;
+	color: var(--ff333f);
+}
+
+#want .header-list {
+	align-items: center;
+	background-color: var(--ffffff);
+	display: flex;
+	height: 46px;
+	left: 0;
+	width: 100%;
+	padding: 0px 140px;
+	border-width: 0 0 1px 0 !important;
+}
+
+#want .header-list-item {
+	color: var(--x666666);
+	margin-bottom: 3px;
+	margin-left: 48px;
+}
+
+#want .header-list-item.first {
+	margin-left: 0px;
+}
+
+#want main {
+	background-color: var(--ffffff);
+	padding: 40px 36px 64px 36px;
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+#want .heading {
+	display: flex;
+	width: 100%;
+	margin-bottom: 16px;
+	color: var(--x666666);
+}
+
+#want .move-want-input {
+	background-color: var(--ff333f);
+	border-radius: 4px;
+	cursor: pointer;
+	display: flex;
+	height: 36px;
+	margin-left: auto;
+	margin-top: -13px;
+	padding: 7px 16px;
+	color: var(--ffffff);
+}
+
+#want .category {
+	border-bottom: 1px solid #e5e5e5;
+	padding: 24px 0px;
+}
+
+#want .category.first {
+	border-top: 1px solid #e5e5e5;
+}
+
+#want .col {
+	display: flex;
+	align-items: center;
+}
+
+#want .average-price {
+	margin-left: 16px;
+	margin-top: 2px;
+	align-items: flex-start;
+	display: flex;
+	height: 20px;
+	min-width: 111px;
+	color: #333;
+}
+
+#want .price-yen,
+#want .price-value {
+	margin-left: 2px;
+}
+
+#want .item {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	margin-top: 16px;
+	min-height: 228px;
+	max-width: 200px;
+	width: 100%;
+	margin-left: 52px;
+}
+
+#want .item.first {
+	margin-left: 0px;
+}
+
+#want .item a {
+	display: block !important;
+}
+
+#want .thumbnail {
+	background-color: var(--alto);
+	height: 200px;
+	min-width: 200px;
+	position: relative;
+}
+
+#want .thumbnail-image {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+#want .price-label {
+	position: absolute;
+	left: 0;
+	bottom: 8px;
+	background-color: var(--black-2);
+	border-radius: 0px 20px 20px 0px;
+	display: flex;
+	padding: 2px 8px;
+	padding-right: 12px;
+	color: var(--ffffff);
+	font-weight: 700;
+}
+
+#want .item-name {
+	color: var(--x333333);
+	margin-top: 7px;
+}

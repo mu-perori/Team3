@@ -1,0 +1,74 @@
+#finish .header {
+	align-items: flex-start;
+	background-color: var(--ffffff);
+	border-bottom: 1px solid var(--e5e5e5);
+	display: flex;
+	height: 67px;
+	padding: 8px 24px;
+}
+
+#finish .finish-main {
+	margin: 0 auto;
+	max-width: 492px;
+	padding: 40px 36px 64px 36px;
+}
+
+#finish .finish-heading {
+	text-align: center;
+}
+
+#finish .finish-text {
+	margin-top: 32px;
+}
+
+#finish .btn {
+	border-radius: 4px;
+	cursor: pointer;
+	display: block;
+	height: 45px;
+	margin-top: 24px;
+	color: var(--ffffff);
+	white-space: nowrap;
+}
+
+#finish .continue-btn {
+	background-color: var(--ff333f);
+	padding: 12px 158px;
+}
+
+#finish .return-btn {
+	background-color: var(--x999999);
+	padding: 12px 142px;
+}
+
+#finish .footer {
+	align-items: center;
+	background-color: var(--f5f5f5);
+	display: flex;
+	height: 68px;
+	justify-content: flex-end;
+	width: 100%;
+	padding: 0 36px;
+	position: absolute; /*　変更*/
+	bottom: 0
+}
+
+#finish .copyright {
+	color: var(--x333333);
+	margin-bottom: 2px;
+	margin-left: 32px;
+	min-width: 79px;
+}
+
+#finish#finish .footer-menu {
+	display: flex;
+}
+
+#finish .footer-menu-item {
+	color: var(--x333333);
+	margin-left: 24px;
+}
+
+#finish .footer-menu-item.first {
+	margin-left: 0px;
+}

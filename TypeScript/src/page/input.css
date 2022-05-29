@@ -1,0 +1,204 @@
+#input body {
+	background-color: var(--ffffff);
+	height: 100%;
+	width: 100%;
+}
+
+#input .header {
+	align-items: flex-start;
+	background-color: var(--ffffff);
+	border-bottom: 1px solid var(--e5e5e5);
+	display: flex;
+	height: 67px;
+	padding: 8px 24px;
+}
+
+#input .input-main {
+	margin: 0 auto;
+	max-width: 640px;
+	padding: 40px 36px 64px 36px;
+}
+
+#input .heading {
+	color: var(--x333333);
+	text-align: center;
+}
+
+#input .input-section {
+	color: var(--x666666);
+	font-family: var(--font-family-arial-bold);
+	font-size: var(--font-size-xl);
+	font-weight: 700;
+}
+
+#input .label {
+	color: var(--x333333);
+	font-family: var(--font-family-arial-bold);
+	font-size: var(--font-size-s);
+	font-weight: 700;
+	margin-top: 16px;
+}
+
+#input select {
+	border-radius: 4px;
+	margin-top: 4px;
+	height: 55px;
+	padding: 0 44px 0 16px;
+	width: 100%;
+	-webkit-appearance: none;
+	appearance: none;
+	/* デフォルトの矢印を無効 */
+	background-image: url(../../public/assets/chevron-down-solid.png);
+	background-position: right 10px center;
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	color: #333;
+	font-size: 16px;
+}
+
+#input section {
+	margin-top: 32px;
+}
+
+#input .item-name {
+	align-items: flex-end;
+	display: flex;
+	flex-direction: column;
+}
+
+#input .name-count {
+	color: var(--x333333);
+	margin-top: 7px;
+}
+
+#input .input-item-name {
+	background-color: var(--ffffff);
+	border-radius: 4px;
+	margin-top: 4px;
+	width: 570px;
+	padding: 16px;
+	font-size: 16px;
+	line-height: 1.4em;
+}
+
+#input .description {
+	align-items: flex-end;
+	display: flex;
+	flex-direction: column;
+	margin-top: 16px;
+}
+
+#input .description-container {
+	align-items: center;
+	display: flex;
+	width: 568px;
+}
+
+#input .description-container h3 {
+	margin-top: 0px;
+}
+
+#input .optional {
+	color: var(--x333333);
+	align-items: flex-start;
+	background-color: var(--f5f5f5);
+	display: flex;
+	height: 18px;
+	margin-left: 4px;
+	min-width: 28px;
+	padding: 1px 4px
+}
+
+#input .input-description {
+	background-color: var(--ffffff);
+	border-radius: 4px;
+	height: 200px;
+	margin-top: 3px;
+	width: 570px;
+	padding: 15px;
+	color: #333;
+}
+
+#input .input-description::placeholder {
+	color: var(--x757575);
+}
+
+#input .description-count {
+	color: var(--x333333);
+	margin-top: 7px;
+}
+
+#input .budget-container {
+	align-items: flex-start;
+	display: flex;
+	margin-top: 16px;
+	height: 20px;
+}
+
+#input .budget-container h3 {
+	margin-top: 0px;
+}
+
+#input .budget-range {
+	color: var(--x333333);
+	margin-left: 4px;
+	min-height: 20px;
+}
+
+#input .input-budget {
+	text-align: right;
+	background-color: var(--ffffff);
+	background-image: url(../../public/assets/yen.png);
+	background-position: left 10px center;
+	background-repeat: no-repeat;
+	background-size: 12px 17px;
+	border-radius: 4px;
+	margin-top: 3px;
+	width: 100%;
+	padding: 13px 15px;
+}
+
+#input .submit-btn {
+	display: block;
+	max-width: 420px;
+	margin: 0 auto;
+	margin-top: 48px;
+	background-color: var(--ff333f);
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 12px 180px;
+	border: none;
+	color: var(--ffffff);
+	line-height: 21px;
+	white-space: nowrap;
+}
+
+#input .footer {
+	align-items: center;
+	background-color: var(--f5f5f5);
+	display: flex;
+	height: 68px;
+	justify-content: flex-end;
+	width: 100%;
+	padding: 0 36px;
+}
+
+#input .copyright {
+	color: var(--x333333);
+	margin-bottom: 2px;
+	margin-left: 32px;
+	min-width: 79px;
+}
+
+#input .footer-menu {
+	display: flex;
+}
+
+#input .footer-menu-item {
+	color: var(--x333333);
+	margin-left: 24px;
+}
+
+#input .footer-menu-item.first {
+	margin-left: 0px;
+}
