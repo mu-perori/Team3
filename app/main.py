@@ -38,8 +38,8 @@ images_path = pathlib.Path(os.path.dirname(__file__)).parent.resolve() / "images
 
 
 class Want_input(BaseModel):
-    user_id: int
-    user_name: str
+    # user_id: int
+    # user_name: str
     category: str
     item_name: str
     budget: int
@@ -64,10 +64,8 @@ def add_want(want_input: Want_input):
     cur = con.cursor()
     # res = cur.execute("SELECT item_id FROM wants")
     cur.execute(
-        "INSERT INTO wants(user_id, user_name, category, item_name, budget, item_status, item_discription, item_id) VALUES(?, ?, ?, ?, ?, ?, ?, ?)",
+        "INSERT INTO wants(category, item_name, budget, item_status, item_discription, item_id) VALUES(?, ?, ?, ?, ?, ?)",
         (
-            want_input.user_id,
-            want_input.user_name,
             want_input.category,
             want_input.item_name,
             want_input.budget,
