@@ -7,6 +7,8 @@ import './soldout.css';
 
 const server = process.env.API_URL || 'http://127.0.0.1:9000';
 
+const imgLink = '../images/'
+
 interface Prop {
   onListingCompleted?: () => void;
 }
@@ -17,7 +19,8 @@ export const SoldOut: React.FC<Prop> = (props) => {
     item_name: 'ハリー・ポッターと賢者の石',
     category: '本・音楽・ゲーム',
     item_price: 1000,
-    item_id: 1
+    item_id: 1,
+    item_image_name: 'ハリポタ賢者の石1.jpg'
   }
   const navigate = useNavigate()
   const moveInputPage = () => {
@@ -28,12 +31,12 @@ export const SoldOut: React.FC<Prop> = (props) => {
     <Header />
 	<main className="soldout-main">
 		<ul className="image-slider">
-			<li className="slider-item"><img src="" /></li> <noscript> メイン画像と同じ画像（スライダー用） </noscript>
+			<li className="slider-item"><img src={imgLink + item_info.item_image_name} /></li> <noscript> メイン画像と同じ画像（スライダー用） </noscript>
 		</ul>
 
 		<div className="item-image">
 			<div className="soldout-triangle"><p className="sold">SOLD</p></div>
-			<img id="itemImage" src="" /> <noscript> メイン画像 </noscript>
+			<img id="itemImage" src={imgLink + item_info.item_image_name} /> <noscript> メイン画像 </noscript>
 		</div>
 
 		<div className="soldout-content">
