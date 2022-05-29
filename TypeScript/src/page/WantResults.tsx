@@ -28,16 +28,16 @@ const linkTo = (itemId: number) => {
 
 const searchWords = (s: string) => {
   // サーチの文字列を変換して返す
-  return '黒　ワンピース　ロング丈' + '　'
+  return s.replace('?keyword=', '') + '　'
 }
 
 export const WantResults: React.FC<Prop> = (props) => {
   const { reload = true, onLoadCompleted } = props;
   const location = useLocation(); // 前のページから情報を受け取る
-  console.log(location.state as {search: string})
+  console.log(decodeURI(location.search))
   const [results, setResults] = useState<resultsType[]>([]);
   const fetchItems = () => {
-    fetch(server.concat('/want/results'),
+    fetch(server.concat('/want/results'+location.search),
       {
         method: 'GET',
         mode: 'cors',
@@ -86,7 +86,7 @@ export const WantResults: React.FC<Prop> = (props) => {
       </div>
   
       <div className="content">
-          <h1 className="results-heading x24px-bold">{searchWords(location.search)}の検索結果</h1>
+          <h1 className="results-heading x24px-bold">{searchWords(decodeURI(location.search))}の検索結果</h1>
           <div className="col">
             <p className="quantity x12px">999+件</p>
             <div className="filter-select-container">
