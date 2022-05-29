@@ -204,3 +204,11 @@ def view_item(want_id: str):
 # @app.post("/sell/create")
 # def add_item():
 #     return
+
+def main():
+    print(pickup())
+
+if __name__ == '__main__':
+    main()
+
+
