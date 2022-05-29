@@ -14,7 +14,7 @@ interface Prop {
 
 type itemInfoType = {
   item_name: string,
-  avg_budget: number, 
+  budget: number, 
   category: string, 
   item_status: number,
   item_discription: string,
@@ -39,7 +39,7 @@ export const WantItem: React.FC<Prop> = (props) => {
   console.log(parameter.search)
   const initialStatus = {
     item_name: '',
-    avg_budget: 0, 
+    budget: 0, 
     category: '', 
     item_status: 0,
     item_discription: '',
@@ -89,7 +89,7 @@ export const WantItem: React.FC<Prop> = (props) => {
   			<div className="price-heading">
   				<div className="price x28px-bold">
   					<p className="price-yen">¥</p>
-  					<h2 id="budget" className="amount">{Number(itemInfo.avg_budget).toLocaleString()}</h2> <noscript> 予算 </noscript>
+  					<h2 id="budget" className="amount">{Number(itemInfo.budget).toLocaleString()}</h2> <noscript> 予算 </noscript>
   				</div>
   				<p className="price-detail x12px">(税込) 送料込み</p>
   			</div>
