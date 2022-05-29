@@ -25,7 +25,7 @@ type itemsListType = {
     wants_id:number,
     item_image_name: string,
     item_name: string,
-    item_price:number
+    budget:number
 };
 
 // 一番最初の要素にだけ指定されているクラスをmapのindexを使って判定して返す
@@ -47,7 +47,7 @@ export const Want: React.FC<Prop> = (props) => {
     fetch(server.concat('/want'),
       {
         method: 'GET',
-        mode: 'cors',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
@@ -108,7 +108,7 @@ export const Want: React.FC<Prop> = (props) => {
                   					  <img className="thumbnail-image" src="" alt="" />
                 					    <div className="price-label x20px-bold">
                 					      <span>¥</span>
-                								<p className="price-value">{item.item_price}</p>
+                								<p className="price-value">{item.budget}</p>
                   					  </div>
                   					</div>
                   					<p className="item-name x14px">{item.item_name}</p>

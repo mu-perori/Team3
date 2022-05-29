@@ -17,7 +17,7 @@ type resultsType = {
   wants_id:number,
   item_image_name: string,
   item_name: string,
-  item_price: number
+  budget: number
 }
 
 const insertTag = (index: number, min_i:number, max_i: number) => {return index >= min_i && index <= max_i}
@@ -105,7 +105,7 @@ export const WantResults: React.FC<Prop> = (props) => {
               <img id="thumbnail12" className="thumbnail-image" src="" />
               <div className="price-label x20px-bold">
                 <div className="price">¥</div>
-                <div id="valuePrice12" className="price-value">{value.item_price}</div>
+                <div id="valuePrice12" className="price-value">{value.budget}</div>
               </div>
             </div>
             <p className="item-name x14px">{value.item_name}</p>
@@ -119,7 +119,7 @@ export const WantResults: React.FC<Prop> = (props) => {
               <img id="thumbnail12" className="thumbnail-image" src="" />
               <div className="price-label x20px-bold">
                 <div className="price">¥</div>
-                <div id="valuePrice12" className="price-value">{value.item_price}</div>
+                <div id="valuePrice12" className="price-value">{value.budget}</div>
               </div>
             </div>
             <p className="item-name x14px">{value.item_name}</p>
@@ -133,7 +133,7 @@ export const WantResults: React.FC<Prop> = (props) => {
               <img id="thumbnail12" className="thumbnail-image" src="" />
               <div className="price-label x20px-bold">
                 <div className="price">¥</div>
-                <div id="valuePrice12" className="price-value">{value.item_price}</div>
+                <div id="valuePrice12" className="price-value">{value.budget}</div>
               </div>
             </div>
             <p className="item-name x14px">{value.item_name}</p>
@@ -147,7 +147,7 @@ export const WantResults: React.FC<Prop> = (props) => {
               <img id="thumbnail12" className="thumbnail-image" src="" />
               <div className="price-label x20px-bold">
                 <div className="price">¥</div>
-                <div id="valuePrice12" className="price-value">{value.item_price}</div>
+                <div id="valuePrice12" className="price-value">{value.budget}</div>
               </div>
             </div>
             <p className="item-name x14px">{value.item_name}</p>

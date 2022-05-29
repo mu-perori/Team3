@@ -11,13 +11,11 @@ interface Prop {
 }
 
 type formDataType = {
-  user_id: number,
   category: string, // カテゴリ
   item_name: string, // 商品名
   budget: number, // 予算
   item_status: number | null, // 商品の状態
-  item_discription: string, // 詳細
-  item_id: string | null // 商品ID
+  item_discription: string // 詳細
 }
 
 type locationDataType = {
@@ -36,17 +34,16 @@ export const WantInput: React.FC<Prop> = (props) => {
       return selectValue == stateValue
   }
   const initialState = {
-      user_id: 0,
       category: state.category || '',
       item_name: state.item_name || '',
       budget: state.item_price || 0,
       item_status: null,
-      item_discription: 'null',
-      item_id: 'null'
+      item_discription: 'null'
   };
   const [values, setValues] = useState<formDataType>(initialState);
   const isVaild = (values: formDataType): boolean => {
-      return !(values.category && values.item_name && values.budget && values.item_status);
+      // return !(values.category && values.item_name && values.budget && values.item_status);
+      return false
   };
 
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -64,18 +61,16 @@ export const WantInput: React.FC<Prop> = (props) => {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const data = new FormData()
-    data.append('user_id', String(values.user_id));
     data.append('category', values.category);
     data.append('item_name', values.item_name);
     data.append('budget', String(values.budget));
     data.append('item_status', String(values.item_status));
     data.append('item_discription', values.item_discription);
-    data.append('item_id', String(values.item_id));
-
-    fetch(server.concat('/input'), {
+    
+    fetch(server.concat('/want/input'), {
       method: 'POST', // デフォルトはGET
       mode: 'cors', // デフォルトもcors
-      body: data,
+      body: JSON.stringify(data),
     })
       .then(response => {
           if (response.status == 200){
