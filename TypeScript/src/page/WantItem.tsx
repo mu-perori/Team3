@@ -6,6 +6,7 @@ import { Footer } from '../components/Footer';
 import './item.css';
 
 const server = process.env.API_URL || 'http://127.0.0.1:9000';
+const image_path = '../images/'
 
 interface Prop {
   reload?: boolean;
@@ -76,10 +77,10 @@ export const WantItem: React.FC<Prop> = (props) => {
       <Header />
       <main>
         <ul className="image-slider">
-          <li className="slider-item"><img id="sliderThumbnail" src="" /></li> <noscript> メイン画像と同じ画像（スライダー用） </noscript>
+          <li className="slider-item"><img id="sliderThumbnail" src={image_path + itemInfo.item_image_name} /></li> <noscript> メイン画像と同じ画像（スライダー用） </noscript>
         </ul>
 
-        <div className="item-image"><img id="itemImage" src="" /></div> <noscript> メイン画像 </noscript>
+        <div className="item-image"><img id="itemImage" src={image_path + itemInfo.item_image_name} /></div> <noscript> メイン画像 </noscript>
 
         <div className="content">
           <h1 className="x24px-bold" id="itemName">{itemInfo.item_name}</h1> <noscript> 商品名 </noscript>
