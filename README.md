@@ -45,9 +45,21 @@
 ### 購入者視点
 #### トップページのボタンから登録
 
+
+https://user-images.githubusercontent.com/61280283/171287318-a0575486-3f59-4ef5-9c74-cbaf70945a92.mp4
+
+
 ### 売り切れ商品のページのボタンから登録
 
+
+https://user-images.githubusercontent.com/61280283/171287333-9b5cfdb2-0b2e-421b-b8c9-7dafe8763a4b.mp4
+
+
 ### 出品者視点
+
+
+https://user-images.githubusercontent.com/61280283/171287343-824ccffe-6169-46c9-826c-5ec85261aa8d.mp4
+
 
 
 ## コンセプト・着想(プレゼンテーションスライドから抜粋)
