@@ -65,9 +65,7 @@ export const Want: React.FC<Prop> = (props) => {
   }
 
   useEffect(() => {
-    if (reload) {
-      fetchItems();
-    }
+    fetchItems();
   }, [reload]);
 
   return (
