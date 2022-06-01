@@ -67,3 +67,13 @@ https://user-images.githubusercontent.com/61280283/171287343-824ccffe-6169-46c9-
 ![2](https://user-images.githubusercontent.com/61280283/171263348-f92d5516-7776-4243-a2ae-efa90164ba49.jpg)
 ![3](https://user-images.githubusercontent.com/61280283/171263379-035d818d-641f-4257-bdf0-f77ff4d5e98b.jpg)
 
+## 使用技術・担当者
+### フロントエンド：TypeScript/React
+- Mitama Masuda ([mitamam](https://github.com/mitamam)) (HTML/CSS)
+
+- mu ([mu-perori](https://github.com/mu-perori)) (TypeScript/React)
+
+### バックエンド：Python/FastAPI/SQLite
+- Ando Taichi ([Taichi-ando](https://github.com/Taichi-ando))
+- Koheki ([Koheki](https://github.com/Koheki))
+
