@@ -70,7 +70,6 @@ https://user-images.githubusercontent.com/61280283/171287343-824ccffe-6169-46c9-
 ## 使用技術・担当者
 ### フロントエンド：TypeScript/React
 - Mitama Masuda ([mitamam](https://github.com/mitamam)) (HTML/CSS)
-
 - mu ([mu-perori](https://github.com/mu-perori)) (TypeScript/React)
 
 ### バックエンド：Python/FastAPI/SQLite
