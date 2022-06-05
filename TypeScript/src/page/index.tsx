@@ -4,3 +4,4 @@ export * from './SoldOut';
 export * from './WantItem';
 export * from './Finish';
 export * from './WantResults';
+export * from './TestWant';

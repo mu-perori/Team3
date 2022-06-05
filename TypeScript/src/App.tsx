@@ -10,7 +10,8 @@ import {
   SoldOut,
   WantItem,
   Finish,
-  WantResults
+  WantResults,
+  TestWant
 } from './page';
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
         <Route path="/finish" element={<Finish />} /> // 登録完了
         
         <Route path="/want/results" element={<WantResults reload={reload} onLoadCompleted={() => setReload(false)} />} /> // 検索結果
+
+        <Route path="/" element={<TestWant reload={reload} onLoadCompleted={() => setReload(false)} />} /> // オブジェクト表示のテスト
         </Routes>
       </Router>
       <noscript>フッターは必要なページにのみ書く</noscript>

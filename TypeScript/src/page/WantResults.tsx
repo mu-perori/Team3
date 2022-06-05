@@ -29,7 +29,7 @@ const linkTo = (itemId: number) => {
 
 const searchWords = (s: string) => {
   // サーチの文字列を変換して返す
-  return s.replace('?keyword=', '') + '　'
+  return `${s.replace('?keyword=', '')}　`
 }
 
 export const WantResults: React.FC<Prop> = (props) => {
@@ -38,7 +38,7 @@ export const WantResults: React.FC<Prop> = (props) => {
   const [results, setResults] = useState<resultsType[]>([]);
   const fetchItems = () => {
     console.log(decodeURI(location.search))
-    fetch(server.concat('/want/results' + location.search),
+    fetch(server.concat(`/want/results${location.search}`),
       {
         method: 'GET',
         mode: 'cors',

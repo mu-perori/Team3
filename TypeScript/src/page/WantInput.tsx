@@ -32,6 +32,12 @@ export const WantInput: React.FC<Prop> = (props) => {
   const selectedJudge = (selectValue: string, stateValue:string) => {
       return selectValue == stateValue
   }
+  /*
+  stateがnullだったら''を代入したい場合
+  NG: category: state.category || ''
+  OK: category: (state ? state.category : '')
+  NGを書くと画面真っ白になる。もんさんはこれでインシデントを発生させた。
+  */
   const initialState = {
       category: (state ? state.category : ''),
       item_name: (state ? state.item_name : ''),

@@ -36,6 +36,7 @@ const status = (item_status: number) => {
 export const WantItem: React.FC<Prop> = (props) => {
   const { reload = true, onLoadCompleted } = props;
   const location = useLocation(); // 前のページから情報を受け取る
+  // as でオブジェクトの中身の型を定義
   const parameter = location as { pathname: string, search: string }
   console.log(parameter.search)
   const initialStatus = {
@@ -48,7 +49,7 @@ export const WantItem: React.FC<Prop> = (props) => {
   }
   const [itemInfo, setItemInfo] = useState<itemInfoType>(initialStatus);
   const fetchItems = () => {
-    fetch(server.concat('/want/item' + encodeURI(parameter.search)),
+    fetch(server.concat(`/want/item${encodeURI(parameter.search)}`),
       {
         method: 'GET',
         mode: 'cors',

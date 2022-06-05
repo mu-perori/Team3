@@ -26,7 +26,7 @@ export const Header: React.FC<Prop> = (props) => {
   };
   const navigate = useNavigate()
   const onSubmit = () => {
-    navigate("/want/results?keyword=" + encodeURI(searchWords.search));
+    navigate(`/want/results?keyword=${encodeURI(searchWords.search)}`);
   }
   return (
     <header>

@@ -26,9 +26,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+"""
 db_path = (
     pathlib.Path(os.path.dirname(__file__)).parent.resolve() / "db" / "team3.sqlite3"
 )
+"""
+db_path = "../db/team3.sqlite3" # うえはらの環境はこのパスなら動く
 
 images_path = pathlib.Path(os.path.dirname(__file__)).parent.resolve() / "images"
 

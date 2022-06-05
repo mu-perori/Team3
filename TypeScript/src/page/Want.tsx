@@ -36,7 +36,9 @@ const first = (index: number) => {
 };
 
 const linkTo = (itemId: number) => {
-  return { pathname: "/want/item", search: "want_id=" + String(itemId) }
+  // searchで渡すとlocalで受け取ったとき頭に?が自動で付く
+  // search: "want_id=2"だったら"?want_id=2"になる
+  return { pathname: "/want/item", search: `want_id=${String(itemId)}` }
 }
 
 // 探してますトップページ
